@@ -34,7 +34,7 @@ const YAxis = ({ top, bottom, left, right, scale }) => {
 
 const Rect = ({ data, x, y, height, top, bottom }) => {
   return (
-    <g transform={`translate(${x(data.date)}, ${y(data.value)})`}>
+    <g transform={`translate(${x(data.name)}, ${y(data.value)})`}>
       <rect
         width={x.bandwidth()}
         height={height - bottom - top - y(data.value)}
@@ -57,7 +57,7 @@ const Bar = props => {
 
   const data = props.data;
 
-  
+  console.log(data);
 
   const x = d3
     .scaleBand()
